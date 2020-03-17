@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Coronavirus Info</title>
+    <link rel="stylesheet" href="./style.css" type="text/css" />
+  </head>
+  <body>
+    <h1>CoViD19 Cases</h1>
+    <p>
+      Credits to <span class="lmao">https://lmao.ninja/</span> aka.
+      <span class="lmao">EliteDaMyth</span> for the API
+    </p>
+    <div id="all"></div>
+    <!--------------------------------------------->
+
+    <div>
+      <div class="autocomplete" style="width:300px;">
+        <input
+          id="myInput"
+          type="text"
+          name="myCountry"
+          placeholder="Country"
+        />
+      </div>
+      <button onclick="__handleSearch()">Search</button>
+      <button onclick="__handleShowAll()" id="show-all" style="display: none;">
+        ShowAll
+      </button>
+    </div>
+
+    <!------------------------------------------------>
+    <table id="table"></table>
+
+    <script src="./index.js" type="application/javascript"></script>
+  </body>
+</html>
