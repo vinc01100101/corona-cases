@@ -7,10 +7,10 @@ xhr1.send();
 xhr1.onreadystatechange = () => {
   if (xhr1.readyState == 4 && xhr1.status == 200) {
     const json = JSON.parse(xhr1.responseText);
-    const html = `<div class='hd cases'>Total Cases: ${json.cases}</div>
-        <div class='hd deaths'>Total Deaths: ${json.deaths}</div>
-        <div class='hd recovered'>Recovered: ${json.recovered}</div>
-        <div class='hd updated'>Updated: ${new Date(json.updated)}</div>`;
+    const html = `<h3 class='hd cases'>Total Cases: ${json.cases}</h3>
+        <h3 class='hd deaths'>Total Deaths: ${json.deaths}</h3>
+        <h3 class='hd recovered'>Recovered: ${json.recovered}</h3>
+        <h3 class='hd updated'>Updated: ${new Date(json.updated)}</h3>`;
     all.innerHTML = html;
   }
 };
@@ -36,7 +36,7 @@ function __handleShowAll() {
 
       document.getElementById("show-all").style.display = "none";
       var countries = json2.map(x => x.country);
-      document.getElementById("errorMessage").textContent=""
+      document.getElementById("errorMessage").textContent = "";
       autocomplete(document.getElementById("myInput"), countries);
     }
   };
@@ -61,11 +61,12 @@ function __handleSearch(e) {
                       <td class='item critical'>${json3.critical}</td></tr>`;
 
           generateHtml([html]);
-          document.getElementById("errorMessage").textContent=""
+          document.getElementById("errorMessage").textContent = "";
           document.getElementById("show-all").style.display = "inline";
         } catch (e) {
           console.log("Invalid input");
-          document.getElementById("errorMessage").textContent="No match found."
+          document.getElementById("errorMessage").textContent =
+            "No match found.";
         }
       }
     };
