@@ -36,7 +36,7 @@ function __handleShowAll() {
 
       document.getElementById("show-all").style.display = "none";
       var countries = json2.map(x => x.country);
-
+      document.getElementById("errorMessage").textContent=""
       autocomplete(document.getElementById("myInput"), countries);
     }
   };
@@ -61,9 +61,11 @@ function __handleSearch(e) {
                       <td class='item critical'>${json3.critical}</td></tr>`;
 
           generateHtml([html]);
+          document.getElementById("errorMessage").textContent=""
           document.getElementById("show-all").style.display = "inline";
         } catch (e) {
           console.log("Invalid input");
+          document.getElementById("errorMessage").textContent="No match found."
         }
       }
     };
