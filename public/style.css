@@ -10,6 +10,10 @@
 .hd {
   margin: 10px;
 }
+#errorMessage{
+  color: red;
+  margin: 10px;
+}
 th {
   background-color: thistle;
   color: black;
